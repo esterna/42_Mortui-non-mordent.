@@ -6,14 +6,14 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 18:28:14 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/27 13:37:36 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 12:30:37 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 static int		ft_strlen(char *src)
 {
 	int i;
-	
+
 	i = 0;
 	while (src[i] != 0)
 		i++;
@@ -22,8 +22,8 @@ static int		ft_strlen(char *src)
 
 char			*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
-	int len;
+	unsigned int	i;
+	unsigned int	len;
 
 	i = 0;
 	len = ft_strlen(src);

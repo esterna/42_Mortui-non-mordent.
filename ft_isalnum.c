@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:55:45 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 11:04:34 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 11:47:53 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+static int		ft_isalpha(int n)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	if ((65 <= n && n <= 90) || (97 <= n && n <= 122))
+		return (1024);
+	return (0);
+}
 
-	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
-	{
-		tmp_d[i] = tmp_s[i];
-		i++;
-	}
-	return (dest);
+static int		ft_isdigit(int n)
+{
+	if (48 <= n && n <= 57)
+		return (1);
+	return (0);
+}
+
+int				ft_isalnum(int n)
+{
+	if (ft_isdigit(n) || ft_isalpha(n))
+		return (1);
+	return (0);
 }

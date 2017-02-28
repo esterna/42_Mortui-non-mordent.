@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:55:45 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 10:09:39 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 12:32:41 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+const char	*ft_strrchr(const char *str, int c)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	const char *tmp;
 
-	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
-	{
-		tmp_d[i] = tmp_s[i];
-		i++;
-	}
-	return (dest);
+	tmp = str;
+	while (tmp != '\0')
+		tmp++;
+	while (*tmp != (const char)c && *tmp != *str)
+		tmp--;
+	if (*tmp == (const char)c)
+		return (tmp);
+	return (0);
 }

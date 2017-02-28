@@ -1,24 +1,28 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    memmove                                            :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: esterna <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/02/27 14:41:31 by esterna           #+#    #+#              #
-#    Updated: 2017/02/27 14:47:34 by esterna          ###   ########.fr        #
+#    Created: 2017/01/26 17:01:46 by esterna           #+#    #+#              #
+#    Updated: 2017/02/28 12:12:55 by esterna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-void	*ft_memmove(void *dest, void *src, unsigned int n)
-{
-	int i;
+NAME = libft
+CFLAGS = -Wall -Wextra -Werror
+DEPS = libft.h
+FUNCTIONS = *.c
+OBJ = $(FUNCTIONS:.c=.o)
 
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
-}
+all: $(NAME)
+$(NAME):
+	gcc $(CFLAGS) -c $(FUNCTIONS) -I$(DEPS)
+	ar rc $@.a $(OBJ)
+	ranlib $@.a
+clean:
+		/bin/rm -f $(OBJ)
+fclean: clean
+		/bin/rm -f $(NAME).a
+re: fclean all

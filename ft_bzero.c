@@ -6,20 +6,20 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 13:59:40 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/27 14:02:25 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 12:16:48 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void		ft_bzero(void *src, unsigned int n)
 {
-	int i;
-	void *tmp;
+	unsigned int		i;
+	char				*tmp;
 
 	i = 0;
 	tmp = src;
 	while (i < n)
 	{
-		tmp[i] = '\0';
+		tmp[i] = 0;
 		i++;
 	}
 }

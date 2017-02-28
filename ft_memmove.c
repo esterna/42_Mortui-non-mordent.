@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:55:45 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 11:40:11 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 13:03:23 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+void	*ft_memmove(void *dest, void *src, unsigned int n)
 {
 	unsigned int	i;
 	unsigned char	*tmp_d;

@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:55:45 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 10:30:58 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 12:31:48 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+const char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	int i;
+	int n;
 
-	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	if (needle == 0 || *needle == '\0')
+		return (haystack);
+	while (*haystack != '\0' && len > 0)
 	{
-		tmp_d[i] = tmp_s[i];
-		i++;
+		i = 0;
+		n = 0;
+		while (haystack[n] == needle[i] &&
+				needle[i] != '\0' && haystack[n] != '\0')
+		{
+			n++;
+			i++;
+		}
+		if (needle[i] == '\0')
+			return (haystack);
+		haystack++;
+		len--;
 	}
-	return (dest);
+	return (0);
 }

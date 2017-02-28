@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:55:45 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 09:37:07 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 09:46:42 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	char *tmp;
 
-	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	tmp = dest;
+	while (*tmp != '\0')
+		tmp++;
+	while (*src != '\0')
 	{
-		tmp_d[i] = tmp_s[i];
-		i++;
+		*tmp = *src;
+		tmp++;
+		src++;
 	}
+	*tmp = '\0';
 	return (dest);
 }
