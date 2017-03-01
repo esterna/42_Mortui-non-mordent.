@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/28 10:15:25 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 15:11:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/02/28 14:38:44 by esterna           #+#    #+#             */
+/*   Updated: 2017/02/28 19:38:46 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *haystack, const char *needle)
-{
-	int i;
-	int n;
+#include <stdio.h>
+#include <string.h>
+#include "libft.h"
 
-	if (needle == 0 || *needle == '\0')
-		return ((char *)haystack);
-	while (*haystack != '\0')
-	{
-		i = 0;
-		n = 0;
-		while (haystack[n] == needle[i] &&
-				needle[i] != '\0' && haystack[n] != '\0')
-		{
-			n++;
-			i++;
-		}
-		if (needle[i] == '\0')
-			return ((char *)haystack);
-		haystack++;
-	}
+int		main()
+{
+	char p1[8] = "cat";
+	char *p2 = "cart";
+
+	printf("%lu\n", strlcat(p1, p2, 7));
+	printf("%u\n", ft_strlcat(p1, p2, 7));
+
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 16:06:13 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/27 13:07:45 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 19:01:26 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int		ft_strlen(char *str)
+static int		ft_strlen(const char *str)
 {
 	int n;
 	int i;
@@ -45,13 +45,13 @@ static char		*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char			*ft_strdup(char *src)
+char			*ft_strdup(const char *src)
 {
 	char *cp;
 
-	cp = malloc(ft_strlen(src) + 1);
+	cp = (char *)malloc(ft_strlen(src) + 1);
 	if (cp == 0)
 		return (0);
-	ft_strcpy(cp, src);
+	ft_strcpy(cp, (char *)src);
 	return (cp);
 }

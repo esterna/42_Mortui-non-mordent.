@@ -6,33 +6,28 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:51:27 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 11:42:33 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 19:43:46 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include <stdio.h>
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int		i;
-	int		n;
-	char	*tmp;
+	int				i;
+	int				n;
+	unsigned int	dlen;
+	unsigned int	slen;
 
 	i = 0;
+	dlen = (unsigned int)ft_strlen(dest);
+	slen = (unsigned int)ft_strlen(src);
+	printf("%u\n", dlen);
+	printf("%u\n", slen);
 	n = size - ft_strlen(dest) - 1;
-	tmp = dest;
-	if (size == 0)
-		return (0);
+	if (dlen >= size)
+		return (slen + (size == dlen ? dlen : size));
 	while (*dest != '\0')
 		dest++;
 	while (*src != '\0' && i < n)
@@ -43,5 +38,5 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	*dest = '\0';
-	return (ft_strlen(tmp));
+	return (dlen + slen);
 }
