@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:51:27 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 19:43:46 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 20:25:57 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	i = 0;
 	dlen = (unsigned int)ft_strlen(dest);
 	slen = (unsigned int)ft_strlen(src);
-	printf("%u\n", dlen);
-	printf("%u\n", slen);
-	n = size - ft_strlen(dest) - 1;
+	n = size - dlen - 1;
 	if (dlen >= size)
 		return (slen + (size == dlen ? dlen : size));
 	while (*dest != '\0')

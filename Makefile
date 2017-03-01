@@ -6,12 +6,12 @@
 #    By: esterna <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/26 17:01:46 by esterna           #+#    #+#              #
-#    Updated: 2017/02/28 16:12:36 by esterna          ###   ########.fr        #
+#    Updated: 2017/02/28 20:45:00 by esterna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
 DEPS = libft.h
 FUNCTIONS = *.c
 OBJ = $(FUNCTIONS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 14:38:44 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 19:38:46 by esterna          ###   ########.fr       */
+/*   Updated: 2017/02/28 20:57:07 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 int		main()
 {
-	char p1[8] = "cat";
-	char *p2 = "cart";
+//:w
+//char p1[8] = "giraffe";
+	char p2[8] = "giraffe";
+	char *p3 = "dog";
+	int i = 9;
 
-	printf("%lu\n", strlcat(p1, p2, 7));
-	printf("%u\n", ft_strlcat(p1, p2, 7));
+	//printf("Real: %s\n", strncpy(p1, p3, i));
+	printf("Mine: %s\n", ft_strncpy(p2, p3, i));
 
 	return (0);
 }
