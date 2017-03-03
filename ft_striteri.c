@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/02 16:52:30 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/02 16:55:05 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	int i;
 
 	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	while (*s)
 	{
-		tmp_d[i] = tmp_s[i];
+		f(i, s);
+		s++;
 		i++;
 	}
-	return (dest);
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/02 16:57:07 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/02 17:02:55 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include <stdlib.h>
+#include "libft.h"
+
+char		*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	int i;
+	int len;
+	char *tmp;
 
 	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	len = ft_strlen((char *)s) + 1;
+	tmp = (char *)malloc(sizeof(char) * len);
+	while (i < len)
 	{
-		tmp_d[i] = tmp_s[i];
+		tmp[i] = f(s[i]);
 		i++;
 	}
-	return (dest);
+	return (tmp);
 }

@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/02 17:37:45 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/02 17:48:42 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include <stdlib.h>
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	int		i;
+	int		len;
+	char	*ns;
 
 	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	ns = (char *)malloc(sizeof(char) * len);
+	while (*s1)
 	{
-		tmp_d[i] = tmp_s[i];
+		ns[i] = *s1;
+		s1++;
 		i++;
 	}
-	return (dest);
+	while (*s2)
+	{
+		ns[i] = *s2;
+		s2++;
+		i++;
+	}
+	ns[i] = '\0';
+	return (ns);
 }

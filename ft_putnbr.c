@@ -6,16 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 12:51:54 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 15:46:40 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/02 18:45:45 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-static	void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#include "libft.h"
 
 void			ft_putnbr(int nb)
 {

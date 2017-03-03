@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/02 20:35:07 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/02 20:35:54 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
-{
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+#include <unistd.h>
+#include "libft.h"
 
-	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+void			ft_putnbr_fd(int nb, int fd)
+{
+	int min;
+
+	min = 0;
+	if (nb < 0)
 	{
-		tmp_d[i] = tmp_s[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		if (nb == -2147483648)
+		{
+			min = 1;
+			nb = 2147483647;
+		}
+		else
+			nb = nb * -1;
 	}
-	return (dest);
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar_fd((nb % 10 + min) + '0', fd);
 }

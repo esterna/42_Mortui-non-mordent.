@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/02 17:28:11 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/02 17:36:48 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include <stdlib.h>
+
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned char	*tmp_d;
-	unsigned char	*tmp_s;
+	size_t i;
+	char *tmp;
 
 	i = 0;
-	tmp_d = (unsigned char *)dest;
-	tmp_s = (unsigned char *)src;
-	while (i < n)
+	tmp = (char *)malloc(sizeof(char) * (len + 1));
+	if (tmp == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		tmp_d[i] = tmp_s[i];
+		tmp[i] = s[start];
 		i++;
+		start++;
 	}
-	return (dest);
+	tmp[i] = '\0';
+	return (tmp);
 }
