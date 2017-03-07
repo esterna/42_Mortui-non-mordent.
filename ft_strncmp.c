@@ -6,19 +6,26 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 19:14:26 by esterna           #+#    #+#             */
-/*   Updated: 2017/01/17 19:23:57 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/06 18:03:23 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s1 == *s2 && *s1 && *s2 && n > 0)
+	int i;
+
+	i = 1;
+	if (n == 0)
+		return (0);
+	while (*s1 == *s2 && *s1 && *s2 && i < (int)n)
 	{
 		s1++;
 		s2++;
-		n--;
+		i++;
 	}
 	if (*s1 == *s2)
 		return (0);
-	return (*s1 - *s2);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:37:45 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 17:48:42 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 21:43:05 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	len = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
-	ns = (char *)malloc(sizeof(char) * len);
+	ns = ft_strnew(len);
+	if (!ns)
+		return (NULL);
 	while (*s1)
 	{
 		ns[i] = *s1;

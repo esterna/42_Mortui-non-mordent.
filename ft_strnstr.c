@@ -6,24 +6,28 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 10:30:58 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 15:11:18 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/06 17:00:39 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int i;
 	int n;
+	int tmp_len;
 
-	if (needle == 0 || *needle == '\0')
+	if (*needle == '\0')
 		return ((char *)haystack);
-	while (*haystack != '\0' && len > 0)
+	while (len > 0)
 	{
 		i = 0;
 		n = 0;
-		while (haystack[n] == needle[i] &&
-				needle[i] != '\0' && haystack[n] != '\0')
+		tmp_len = len;
+		while (haystack[n] == needle[i] && needle[i] && haystack[n] && tmp_len)
 		{
+			tmp_len--;
 			n++;
 			i++;
 		}

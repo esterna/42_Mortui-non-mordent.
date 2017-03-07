@@ -6,13 +6,15 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:50:03 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 13:12:46 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:58:09 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(void *str, int c, unsigned int n)
+#include "libft.h"
+
+void	*ft_memchr(void *str, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*tmp;
 
 	i = 0;

@@ -6,51 +6,56 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 18:44:21 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 19:12:08 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/07 00:42:27 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int			nbr_size(int n)
+static int			nbr_size(int n)
 {
 	int len;
 
 	len = 1;
-	if (n < 0)
+	if (n <= 0)
+	{
+		n = n * -1;
 		len++;
+	}
 	while (n)
 	{
 		n = n / 10;
 		len++;
 	}
-	len++;
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
-	int		i;
 	int		neg;
 	int		len;
 	char	*nbr;
 
-	i = 0;
 	neg = 0;
 	len = nbr_size(n);
 	if (n < 0)
 	{
 		neg = 1;
 		if (n == -2147483648)
-			return(ft_strdup("-2147483648"));
+			return (ft_strdup("-2147483648"));
 		n = n * -1;
 	}
 	nbr = (char *)malloc(sizeof(char) * len);
-	nbr[len--] = '\0';
+	if (!nbr)
+		return (NULL);
+	len--;
+	nbr[len] = '\0';
+	len--;
 	while (len)
 	{
-		nbr[len--] = n % 10 + '0';
+		nbr[len] = n % 10 + '0';
+		len--;
 		n = n / 10;
 	}
 	if (neg)

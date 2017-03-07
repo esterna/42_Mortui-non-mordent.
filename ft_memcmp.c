@@ -6,13 +6,15 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 16:08:11 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 12:33:51 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:58:21 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_memcmp(void *s1, void *s2, unsigned int n)
+#include "libft.h"
+
+int		ft_memcmp(void *s1, void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*tmp1;
 	unsigned char	*tmp2;
 

@@ -6,13 +6,15 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 13:48:23 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:40:08 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:59:14 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		*ft_memset(void *src, int c, unsigned int n)
+#include "libft.h"
+
+void		*ft_memset(void *src, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*tmp;
 
 	i = 0;

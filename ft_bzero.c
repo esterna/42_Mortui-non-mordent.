@@ -6,14 +6,16 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 13:59:40 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 12:16:48 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:53:27 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_bzero(void *src, unsigned int n)
+#include "libft.h"
+
+void		ft_bzero(void *src, size_t n)
 {
-	unsigned int		i;
-	char				*tmp;
+	size_t		i;
+	char		*tmp;
 
 	i = 0;
 	tmp = src;

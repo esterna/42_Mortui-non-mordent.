@@ -6,21 +6,21 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 22:51:37 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 23:25:29 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 18:33:18 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *current;
 	t_list *new_lst;
 	t_list *tmp;
 
 	current = lst;
-	new_lst = (t_list *)malloc(sizeof(t_list) * ft_lstsize);
+	new_lst = (t_list *)malloc(sizeof(t_list) * ft_lstsize(lst));
 	tmp = new_lst;
 	while (current)
 	{

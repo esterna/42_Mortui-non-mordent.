@@ -6,13 +6,15 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:21:04 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:08:55 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:58:34 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*tmp_d;
 	unsigned char	*tmp_s;
 

@@ -6,11 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 16:22:01 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 16:24:15 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 18:01:49 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

@@ -6,23 +6,23 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:51:27 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 20:25:57 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:36:12 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t		ft_strlcat(char *dest, char *src, size_t size)
 {
 	int				i;
 	int				n;
-	unsigned int	dlen;
-	unsigned int	slen;
+	size_t			dlen;
+	size_t			slen;
 
 	i = 0;
-	dlen = (unsigned int)ft_strlen(dest);
-	slen = (unsigned int)ft_strlen(src);
+	dlen = (size_t)ft_strlen(dest);
+	slen = (size_t)ft_strlen(src);
 	n = size - dlen - 1;
 	if (dlen >= size)
 		return (slen + (size == dlen ? dlen : size));

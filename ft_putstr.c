@@ -6,11 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 15:53:28 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 19:16:15 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 18:00:24 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr(char const *str)
 {

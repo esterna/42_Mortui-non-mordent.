@@ -6,26 +6,29 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 16:57:07 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 17:02:55 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/06 19:07:14 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char		*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	int len;
-	char *tmp;
+	int		i;
+	int		len;
+	char	*tmp;
 
 	i = 0;
 	len = ft_strlen((char *)s) + 1;
 	tmp = (char *)malloc(sizeof(char) * len);
+	if (tmp == NULL)
+		return (NULL);
 	while (i < len)
 	{
-		tmp[i] = f(s[i]);
+		tmp[i] = f((char)*s);
 		i++;
+		s++;
 	}
+	tmp[i] = '\0';
 	return (tmp);
 }

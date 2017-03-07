@@ -6,11 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 16:06:56 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 16:13:13 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:58:48 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {

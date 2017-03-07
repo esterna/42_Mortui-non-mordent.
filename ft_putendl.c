@@ -6,18 +6,14 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 19:14:29 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 21:57:30 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 21:46:46 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_endl(char const *str)
+void	ft_putendl(const char *str)
 {
-	while (*str)
-	{
-		write(1, &*str, 1);
-		str++;
-	}
-	write (1, "\n", 1);
+	write(1, str, ft_strlen((char *)str));
+	write(1, "\n", 1);
 }

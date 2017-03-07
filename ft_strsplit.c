@@ -6,11 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 18:06:41 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 23:26:41 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/07 01:26:49 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int		nbr_words(const char *s, char c)
 {
@@ -55,6 +56,32 @@ static int		largest_word(const char *s, char c)
 	return (largest);
 }
 
+static char		**add_words(char **array, char const *s, char c)
+{
+	int n;
+	int i;
+
+	i = 0;
+	while (*s)
+	{
+		n = 0;
+		while (*s == c && *s)
+			s++;
+		while (*s != c && *s)
+		{
+			array[i][n] = *s;
+			n++;
+			s++;
+		}
+		if ((*s == c || !(*s)) && array[i])
+		{
+			array[i][n] = '\0';
+			i++;
+		}
+	}
+	return (array);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	int		i;
@@ -66,30 +93,18 @@ char			**ft_strsplit(char const *s, char c)
 	i = 0;
 	n = 0;
 	words = nbr_words(s, c) + 1;
-	largest = largest_word(s, c);
+	largest = largest_word(s, c) + 1;
 	tmp = (char **)malloc(sizeof(char *) * words);
+	if (!(tmp))
+		return (NULL);
 	while (i < words)
 	{
 		tmp[i] = (char *)malloc(sizeof(char) * largest);
 		i++;
-	}
-	i = 0;
-	while (*s)
-	{
-		n = 0;
-		while (*s != c && *s)
-		{
-			tmp[i][n] = *s;
-			n++;
-			s++;
-		}
-		if (*s == c)
-		{
-			i++;
-			while (*s == c && *s)
-				s++;
-		}
+		if (!(tmp[i]))
+			return (NULL);
 	}
 	tmp[words - 1] = NULL;
+	tmp = add_words(tmp, s, c);
 	return (tmp);
 }

@@ -6,11 +6,13 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:30:06 by esterna           #+#    #+#             */
-/*   Updated: 2017/01/17 14:52:09 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/06 18:45:44 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
 	int i;
 	int result;
@@ -28,12 +30,12 @@ int	ft_atoi(char *str)
 			neg = -1;
 		i++;
 	}
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		if (str[i] < 48 || 57 < str[i])
-			return (result);
+			return (result * neg);
 		else
-			result = result * 10 + str[i] - '0';
+			result = (result * 10) + (str[i] - '0');
 		i++;
 	}
 	return (result * neg);

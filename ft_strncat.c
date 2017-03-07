@@ -6,14 +6,16 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:40:17 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 18:15:08 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 18:34:14 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int n)
+#include "libft.h"
+
+char	*ft_strncat(char *dest, char *src, size_t n)
 {
-	unsigned int		i;
-	char				*tmp;
+	size_t		i;
+	char		*tmp;
 
 	i = 0;
 	tmp = dest;

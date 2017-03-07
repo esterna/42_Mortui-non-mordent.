@@ -6,12 +6,11 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 22:55:05 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 22:56:39 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:21:53 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int		ft_lstsize(t_list *begin_list)
 {

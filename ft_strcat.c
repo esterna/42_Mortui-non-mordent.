@@ -6,9 +6,11 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:37:07 by esterna           #+#    #+#             */
-/*   Updated: 2017/02/28 09:46:42 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 18:00:50 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *dest, char *src)
 {

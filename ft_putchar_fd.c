@@ -6,11 +6,12 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 20:30:58 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/02 20:31:41 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/03 17:59:42 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
