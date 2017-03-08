@@ -36,6 +36,21 @@ static char		*last_word(char const *s)
 	return (tmp);
 }
 
+static int		new_strlen(char *first, char *last)
+{
+	int	n;
+	char	*tmp;
+
+	n = 0;
+	tmp = first;
+	while (tmp != last)
+	{
+		tmp++;
+		n++;
+	}
+	return (n);
+}
+
 char			*ft_strtrim(char const *s)
 {
 	int		i;
@@ -46,7 +61,7 @@ char			*ft_strtrim(char const *s)
 	i = 0;
 	first = first_word(s);
 	last = last_word(s) + 1;
-	tmp = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	tmp = (char *)malloc(sizeof(char) * (new_strlen(first, last) + 1));
 	if (tmp == NULL)
 		return (NULL);
 	while (*s && s != first)

@@ -22,11 +22,14 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	current = lst;
 	new_lst = (t_list *)malloc(sizeof(t_list) * ft_lstsize(lst));
 	tmp = new_lst;
+	tmp = f(current);
+	current = current->next;
 	while (current)
 	{
-		tmp->next = (*f)(current);
+		tmp->next = f(current);
 		current = current->next;
 		tmp = tmp->next;
 	}
+	tmp->next = NULL;
 	return (new_lst);
 }

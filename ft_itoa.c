@@ -35,7 +35,7 @@ char				*ft_itoa(int n)
 {
 	int		neg;
 	int		len;
-	char	*nbr;
+	char		*nbr;
 
 	neg = 0;
 	len = nbr_size(n);
@@ -49,13 +49,11 @@ char				*ft_itoa(int n)
 	nbr = (char *)malloc(sizeof(char) * len);
 	if (!nbr)
 		return (NULL);
-	len--;
-	nbr[len] = '\0';
+	nbr[--len] = '\0';
 	len--;
 	while (len)
 	{
-		nbr[len] = n % 10 + '0';
-		len--;
+		nbr[len--] = n % 10 + '0';
 		n = n / 10;
 	}
 	if (neg)

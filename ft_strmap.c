@@ -19,8 +19,8 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	char	*tmp;
 
 	i = 0;
-	len = ft_strlen((char *)s) + 1;
-	tmp = (char *)malloc(sizeof(char) * len);
+	len = ft_strlen((char *)s);
+	tmp = (char *)malloc(sizeof(char) * (len + 1));
 	if (tmp == NULL)
 		return (NULL);
 	while (i < len)

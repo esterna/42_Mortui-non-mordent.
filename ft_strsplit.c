@@ -85,13 +85,11 @@ static char		**add_words(char **array, char const *s, char c)
 char			**ft_strsplit(char const *s, char c)
 {
 	int		i;
-	int		n;
 	int		words;
 	int		largest;
 	char	**tmp;
 
 	i = 0;
-	n = 0;
 	words = nbr_words(s, c) + 1;
 	largest = largest_word(s, c) + 1;
 	tmp = (char **)malloc(sizeof(char *) * words);
@@ -100,9 +98,9 @@ char			**ft_strsplit(char const *s, char c)
 	while (i < words)
 	{
 		tmp[i] = (char *)malloc(sizeof(char) * largest);
-		i++;
 		if (!(tmp[i]))
 			return (NULL);
+		i++;
 	}
 	tmp[words - 1] = NULL;
 	tmp = add_words(tmp, s, c);
