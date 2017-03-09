@@ -1,98 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/06 14:23:34 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/07 01:31:22 by esterna          ###   ########.fr       */
+/*   Created: 2017/03/08 22:41:10 by esterna           #+#    #+#             */
+/*   Updated: 2017/03/08 22:43:16 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 int		main()
 {
-/*
-	char *n1 = "         +24     6";
-	char *n2 = "   		-24+6";
-	char *n3 = "   ";
-	char *n4 = "-9223372036854775808";
-	char *n5 = 	"9223372036854775807";
-	char *n6 = "18446744073709551615";
-	char *n7 = "";
-	char *n8 = "2147483647";
-	char *n9 = "-2147483648";
+	char p1[8] = "giraffe";
+	char p2[8] = "giraffe";
+	char *p3 = "dog";
+	char *n = "";
 
-	printf("\nTESTING FT_ATOI...\n");
-	if (atoi(n1) == ft_atoi(n1))
-		printf("Test:         +24     6-> TRUE\n");
-	else 
-		printf("Test:         +24     6-> FALSE\n");
-	if (atoi(n2) == ft_atoi(n2))
-		printf("Test:   		-24+6-> TRUE\n");
-	else 
-		printf("Test:   		-24+6-> FALSE\n");
-	if (atoi(n3) == ft_atoi(n3))
-		printf("Test:    -> TRUE\n");
-	else 
-		printf("Test:    -> FALSE\n");
-	if (atoi(n4) == ft_atoi(n4))
-		printf("Test: –9223372036854775808 -> TRUE\n");
-	else 
-		printf("Test: -9223372036854775808 -> FALSE\n");
-	if (atoi(n5) == ft_atoi(n5))
-		printf("Test: 9223372036854775807 -> TRUE\n");
-	else 
-		printf("Test: 9223372036854775807 -> FALSE\n");
-	if (atoi(n6) == ft_atoi(n6))
-		printf("Test: 18446744073709551615 -> TRUE\n");
-	else 
-		printf("Test: 18446744073709551615 -> FALSE\n");
-	if (atoi(n7) == ft_atoi(n7))
-		printf("Test: NULL -> TRUE\n");
-	else 
-		printf("Test: NULL -> FALSE\n");
-	if (atoi(n8) == ft_atoi(n8))
-		printf("Test: 2147483647 -> TRUE\n");
-	else 
-		printf("Test: 2147483647 -> FALSE\n");
-	if (atoi(n9) == ft_atoi(n9))
-		printf("Test: -2147483648 -> TRUE\n");
-	else 
-		printf("Test: -2147483648 -> FALSE\n");
-
-	
-	   printf("\nTESTING FT_ISALPHA...\n");
-	   if (isalpha(65) == ft_isalpha(65))
-	   printf("Test: A -> TRUE\n");
-	   else 
-	   printf("Test: A -> FALSE\n");
-	   if (isalpha(97) == ft_isalpha(97))
-	   printf("Test: a -> TRUE\n");
-	   else 
-	   printf("Test: a -> FALSE\n");
-	   if (isalpha(50) == ft_isalpha(50))
-	   printf("Test: 2 -> TRUE\n");
-	   else 
-	   printf("Test: 2 -> FALSE\n");
-	   if (isalpha(0) == ft_isalpha(0))
-	   printf("Test: NULL -> TRUE\n");
-	   else 
-	   printf("Test: NULL -> FALSE\n");
-
-
-
-	   char p1[8] = "giraffe";
-	   char p2[8] = "giraffe";
-	   char *p3 = "dog";
-	   char *n = "";
-
-	   printf("\nTESTING FT_STRNCPY...\n");
-	   printf("Real: %s\n", strncpy(p1, n, 3));
-	   printf("Mine: %s\n", ft_strncpy(p2, n, 3));
+	printf("\nTESTING FT_STRNCPY...\n");
+	printf("Real: %s\n", strncpy(p1, n, 3));
+	printf("Mine: %s\n", ft_strncpy(p2, n, 3));
 	//	printf("Real: %s\n", strncpy(n, p3, 3));    //Segfaults
 	//	printf("Mine: %s\n", ft_strncpy(n, p3, 3)); //Segfaults
 	printf("Real: %s\n", strncpy(p1, p3, 0));
@@ -101,130 +30,6 @@ int		main()
 	printf("Mine: %s\n", ft_strncpy(p2, p3, 3));
 	printf("Real: %s\n", strncpy(p1, p3, 6));
 	printf("Mine: %s\n", ft_strncpy(p2, p3, 6));
-
-	char g[] = "giraffe";
-
-	printf("\nTESTING FT_MEMSET...\n");
-	if (strcmp(memset(g, 'b', 1), ft_memset(g, 'b', 1)) == 0)
-	printf("Test: giraffe b 1 -> TRUE\n");
-	else 
-	printf("Test: giraffe b 1 -> FALSE\n");
-	if (strcmp(memset(g, 'b', 0), ft_memset(g, 'b', 0)) == 0)
-	printf("Test: giraffe b 0 -> TRUE\n");
-	else 
-	printf("Test: giraffe b 0 -> FALSE\n");
-	if (strcmp(memset(g, 'b', 8), ft_memset(g, 'b', 8)) == 0)
-	printf("Test: giraffe b 8 -> TRUE\n");
-	else 
-	printf("Test: giraffe b 8 -> FALSE\n");
-
-	char b1[] = "giraffe";
-	char b2[] = "giraffe";
-
-	printf("\nTESTING FT_BZERO...\n");
-	bzero(b1, 0);
-	ft_bzero(b2, 0);
-	if (memcmp(b1, b2, 8) == 0)
-	printf("Test: giraffe 0 -> TRUE\n");
-	else 
-	printf("Test: giraffe 0 -> FALSE\n");
-	bzero(b1, 1);
-	ft_bzero(b2, 1);
-	if (memcmp(b1, b2, 8) == 0)
-	printf("Test: giraffe 1 -> TRUE\n");
-	else 
-	printf("Test: giraffe 1 -> FALSE\n");
-	bzero(b1, 8);
-	ft_bzero(b2, 8);
-	if (memcmp(b1, b2, 8) == 0)
-		printf("Test: giraffe 8 -> TRUE\n");
-	else 
-		printf("Test: giraffe 8 -> FALSE\n");
-
-	char p4[] = "Cats and Dogs.";
-	char p5[] = "Cats and Dogs.";
-	char p6[] = "Kids";
-
-	printf("\nTESTING FT_MEMCPY...\n");
-	memcpy(p4, p6, 0);
-	ft_memcpy(p5, p6, 0);
-	if (memcmp(p4, p5, 14) == 0)
-		printf("Test: Cats and Dogs, Kids, 0 -> TRUE\n");
-	else 
-		printf("Test: Cats and Dogs, Kids, 0 -> FALSE\n");
-	memcpy(p4, p6, 4);
-	ft_memcpy(p5, p6, 4);
-	if (memcmp(p4, p5, 14) == 0)
-		printf("Test: Cats and Dogs, Kids, 4 -> TRUE\n");
-	else 
-		printf("Test: Cats and Dogs, Kids, 4 -> FALSE\n");
-	memcpy(p4, p6, 14);
-	ft_memcpy(p5, p6, 14);
-	if (memcmp(p4, p5, 14) == 0)
-		printf("Test: Cats and Dogs, Kids, 14 -> TRUE\n");
-	else 
-		printf("Test: Cats and Dogs, Kids, 14 -> FALSE\n");
-
-	char p7[] = "Cats and Dogs.";
-	char p8[] = "Cats and Dogs.";
-	char p9[] = "Kids";
-
-	printf("\nTESTING FT_MEMCCPY...\n");
-	printf("Real: %s\t\t%s\n", (char *)memccpy(p7, p9, 'd', 0), p7);
-	printf("Mine: %s\t\t%s\n", ft_memccpy(p8, p9, 'd', 0), p8);
-	printf("Real: %s\t%s\n", (char *)memccpy(p7, p9, 'd', 5), p7);
-	printf("Mine: %s\t%s\n", ft_memccpy(p8, p9, 'd', 5), p8);
-	printf("Real: %s\t\t%s\n", (char *)memccpy(p7, p9, '\0', 14), p7);
-	printf("Mine: %s\t\t%s\n", ft_memccpy(p8, p9, '\0', 14), p8);
-
-	char m1[10] = "Kids";
-	char m2[10] = "Kids";
-	char m3[10] = "Children";
-	char m4[] = "Kids";
-	char m5[] = "Children";
-	char m6[] = "Kids";
-	char m7[] = "Children";
-
-	printf("\nTESTING FT_MEMMOVE...\n");
-	memmove(m1, m3, 0);
-	ft_memmove(m2, m3, 0);
-	if (memcmp(m1, m2, 5) == 0)
-		printf("Test: Kids, Children, 0 -> TRUE\n");
-	else 
-		printf("Test: Kids, Children, 0 -> FALSE\n");
-	memmove(m1, m3, 4);
-	ft_memmove(m2, m3, 4);
-	if (memcmp(m1, m2, 5) == 0)
-		printf("Test: Kids, Children, 4 -> TRUE\n");
-	else 
-		printf("Test: Kids, Children, 4 -> FALSE\n");
-	memmove(m1, m3, 9);
-	ft_memmove(m2, m3, 9);
-	if (memcmp(m1, m2, 9) == 0)
-		printf("Test: Kids, Children, 9 -> TRUE\n");
-	else 
-		printf("Test: Kids, Children, 9 -> FALSE\n");
-	printf("Real: %s\n", memmove(m4, m5, 5));
-	printf("Mine: %s\n", ft_memmove(m6, m7, 5));
-
-
-	char *m4 = 0;
-	char *m5 = "Cats and Dogs.";
-	char *m6 = "Cats and Kittens.";
-
-	printf("\nTESTING FT_MEMCMP...\n");
-	printf("Real: %d\n", memcmp(m5, m6, 0));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 0));
-	printf("Real: %d\n", memcmp(m4, m6, 0)); 
-	printf("Mine: %d\n", ft_memcmp(m4, m6, 0)); 
-	//	printf("Real: %d\n", memcmp(m4, m6, 4)); //Segfaults
-	//	printf("Mine: %d\n", ft_memcmp(m4, m6, 4)); //Segfaults
-	printf("Real: %d\n", memcmp(m5, m6, 4));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 4));
-	printf("Real: %d\n", memcmp(m5, m6, 12));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 12));
-	printf("Real: %d\n", memcmp(m5, m6, 18));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 18));
 
 	char *s1 = "Caterpillar";
 	char *s2 = "Cat";
@@ -349,9 +154,6 @@ int		main()
 	else 
 		printf("Test: Caterpillar, Zoo Animals 3 -> FALSE\n");
 
-
-
-
 	int i = 1;
 	char **result;
 	char *t1 = "    Cats and Dogs    ";
@@ -423,14 +225,6 @@ int		main()
 		i++;
 		result++;
 	}
-	
 
-		printf("\nTESTING FT_ITOA...\n");
-	printf("Testing 42 : %s\n", ft_itoa(42));
-	printf("Testing -5 : %s\n", ft_itoa(-5));
-	printf("Testing -2147483648 : %s\n", ft_itoa(-2147483648));
-	printf("Testing 2147483647 : %s\n", ft_itoa(2147483647));
-	printf("Testing 0 : %s\n", ft_itoa(0));
-*/
 	return (0);
 }
