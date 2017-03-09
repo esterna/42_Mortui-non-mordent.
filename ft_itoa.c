@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 18:44:21 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/07 00:42:27 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/08 21:47:46 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,30 @@ static int			nbr_size(int n)
 	return (len);
 }
 
+static char			*str_setup(int n)
+{
+	int		len;
+	char	*nbr;
+
+	len = nbr_size(n);
+	nbr = (char *)malloc(sizeof(char) * len);
+	if (!nbr)
+		return (NULL);
+	nbr[--len] = '\0';
+	if (n < 0)
+		*nbr = '-';
+	return (nbr);
+}
+
 char				*ft_itoa(int n)
 {
 	int		neg;
 	int		len;
-	char		*nbr;
+	char	*nbr;
 
 	neg = 0;
-	len = nbr_size(n);
+	len = nbr_size(n) - 2;
+	nbr = str_setup(n);
 	if (n < 0)
 	{
 		neg = 1;
@@ -46,19 +62,14 @@ char				*ft_itoa(int n)
 			return (ft_strdup("-2147483648"));
 		n = n * -1;
 	}
-	nbr = (char *)malloc(sizeof(char) * len);
 	if (!nbr)
 		return (NULL);
-	nbr[--len] = '\0';
-	len--;
 	while (len)
 	{
 		nbr[len--] = n % 10 + '0';
 		n = n / 10;
 	}
-	if (neg)
-		nbr[len] = '-';
-	else
+	if (nbr[len] != '-')
 		nbr[len] = n % 10 + '0';
 	return (nbr);
 }

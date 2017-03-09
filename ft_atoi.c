@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:30:06 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/06 18:45:44 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/08 21:35:12 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int result;
-	int neg;
+	int				i;
+	long long int	result;
+	long long int	neg;
 
 	i = 0;
 	neg = 1;
@@ -35,7 +35,7 @@ int		ft_atoi(const char *str)
 		if (str[i] < 48 || 57 < str[i])
 			return (result * neg);
 		else
-			result = (result * 10) + (str[i] - '0');
+			result = (result * 10) + (long long int)(str[i] - '0');
 		i++;
 	}
 	return (result * neg);

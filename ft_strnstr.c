@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 10:30:58 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/06 17:00:39 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/08 22:13:45 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (*needle == '\0')
 		return ((char *)haystack);
-	while (len > 0)
+	while (len > 0 && *haystack)
 	{
 		i = 0;
 		n = 0;
