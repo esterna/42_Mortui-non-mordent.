@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 16:57:07 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/06 19:07:14 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 22:01:15 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	char	*tmp;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen((char *)s);
 	tmp = (char *)malloc(sizeof(char) * (len + 1));
 	if (tmp == NULL)

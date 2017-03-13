@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:03:47 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/03 22:03:12 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 22:02:00 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*tmp;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	len = (unsigned int)ft_strlen((char *)s);
 	tmp = (char *)malloc(sizeof(char) * (len + 1));
 	if (!tmp)

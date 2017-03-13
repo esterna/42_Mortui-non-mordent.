@@ -6,11 +6,10 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:51:31 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/08 20:52:45 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 22:11:35 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static char		*first_word(char const *s)
@@ -63,6 +62,8 @@ char			*ft_strtrim(char const *s)
 	int		len;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	first = first_word(s);
 	last = last_word(s) + 1;
 	len = new_strlen(first, last, s);
@@ -74,11 +75,7 @@ char			*ft_strtrim(char const *s)
 	while (*s && s != first)
 		s++;
 	while (*s && s != last)
-	{
-		tmp[i] = *s;
-		i++;
-		s++;
-	}
+		tmp[i++] = *s++;
 	tmp[i] = '\0';
 	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 18:06:41 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/07 01:26:49 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 21:47:16 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	**tmp;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	words = nbr_words(s, c) + 1;
 	largest = largest_word(s, c) + 1;
 	tmp = (char **)malloc(sizeof(char *) * words);
