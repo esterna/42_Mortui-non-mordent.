@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 19:16:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 19:39:46 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 20:24:27 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int			nbr_size(int n, int base)
 	return (len);
 }
 
-static char			*str_setup(int n, base)
+static char			*str_setup(int n, int base)
 {
 	int		len;
 	char	*nbr;
@@ -45,7 +45,7 @@ static char			*str_setup(int n, base)
 	return (nbr);
 }
 
-char		*ft_itoa_base(int n, int base)
+char				*ft_itoa_base(int n, int base)
 {
 	int		neg;
 	int		len;
@@ -71,5 +71,4 @@ char		*ft_itoa_base(int n, int base)
 	if (nbr[len] != '-')
 		nbr[len] = n % base + '0';
 	return (nbr);
-
 }

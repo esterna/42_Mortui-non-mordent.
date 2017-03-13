@@ -6,7 +6,7 @@
 #    By: esterna <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/26 17:01:46 by esterna           #+#    #+#              #
-#    Updated: 2017/03/12 16:04:13 by esterna          ###   ########.fr        #
+#    Updated: 2017/03/12 20:26:19 by esterna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,4 +28,5 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME).a
 	/bin/rm -f main
+	/bin/rm -f $(NAME).h.gch
 re: fclean all main

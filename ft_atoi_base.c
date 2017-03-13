@@ -6,23 +6,23 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 18:37:52 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 19:12:18 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 20:22:03 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static const char		*set_base(int b)
+static const char			*set_base(int b)
 {
-	const char *base;
-	
+	const char		*base;
+
 	base = "0123456789abcdef";
 	return (ft_strsub(base, 0, b));
 }
 
-static int			ind(int n, const char *base)
+static int					ind(int n, const char *base)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (base[i] && base[i] != n)
@@ -30,7 +30,7 @@ static int			ind(int n, const char *base)
 	return (i);
 }
 
-int					ft_atoi_base(const char *n, int b)
+int							ft_atoi_base(const char *n, int b)
 {
 	int				result;
 	int				neg;

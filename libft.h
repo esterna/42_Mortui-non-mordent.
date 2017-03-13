@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:04:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 20:16:51 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 20:24:52 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
 
-char				*ft_itoa_base(int n, int base)
+char				*ft_itoa_base(int n, int base);
 
 void				ft_putendl(char const *s);
 
@@ -146,9 +146,10 @@ int					ft_lstsize(t_list *begin_list);
 
 void				ft_lstadd(t_list **alst, t_list *new);
 
-void				ft_lstaddend(t_list **alst, t_list *new)
+void				ft_lstaddend(t_list **alst, t_list *new);
 
-t_list				*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
+t_list				*ft_lstfind(t_list *begin_list, void *data_ref,
+								int (*cmp)());
 
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
