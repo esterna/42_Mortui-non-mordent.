@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 22:41:10 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/08 22:43:16 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 17:12:20 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,28 @@
 
 int		main()
 {
+	char c1 = "Cats ";
+	char c2 = "and Dogs.";
+	char c3 = "Cats ";
+	char c4 = "and Dogs.";
+	char c5 = "";
+
+	printf("\nTESTING FT_STRCAT...\n");
+	if (strcmp(strcat(c1, c2), ft_strcat(c3, c4)) == 0)
+		printf("Test: Cats and Dogs. -> TRUE\n");
+	else
+		printf("Test: Cats and Dogs. -> FALSE\n");
+	if (strcmp(strcat(c1, c5), ft_strcat(c3, c5)) == 0)
+		printf("Test: Cats and Dogs. NULL -> TRUE\n");
+	else
+		printf("Test: Cats and Dogs. NULL -> FALSE\n");
+	if (strcmp(strcat(c5, c1), ft_strcat(c5, c1)) == 0)
+		printf("Test: NULL Cats and Dogs. -> TRUE\n");
+	else
+		printf("Test: NULL Cats and Dogs. -> FALSE\n");
+
+	
+
 	char p1[8] = "giraffe";
 	char p2[8] = "giraffe";
 	char *p3 = "dog";
@@ -34,10 +56,25 @@ int		main()
 	char *s1 = "Caterpillar";
 	char *s2 = "Cat";
 	char *s3 = "Zoo Animals";
-	//	char *s4 = "somethingcatsomething";
+	char *s4 = "somethingcatsomething";
 	char *s5 = "";
-	//	char *s6 = "somethingCatsomething";
-	//	char *s7 = "something Ca";
+	char *s6 = "somethingCatsomething";
+	char *s7 = "something Ca";
+
+	printf("\nTESTING FT_STRCHR...\n");
+	if (strcmp(strchr(s1, 0), ft_strcat(s1, 0)) == 0)
+		printf("Test: Caterpillar 0 -> TRUE");
+	else
+		printf("Test: Caterpillar 0 -> FALSE");
+	if (strcmp(strchr(s1, 67), ft_strcat(s1, 67)) == 0)
+		printf("Test: Caterpillar C -> TRUE");
+	else
+		printf("Test: Caterpillar C -> FALSE");
+	if (strcmp(strchr(s1, 90), ft_strcat(s1, 90)) == 0)
+		printf("Test: Caterpillar Z -> TRUE");
+	else
+		printf("Test: Caterpillar Z -> FALSE");
+
 
 	printf("\nTESTING FT_STRSTR...\n");
 	printf("Real: %s\n", strstr(s1, s2));
@@ -54,6 +91,7 @@ int		main()
 	printf("Mine: %s\n", ft_strstr(s6, s2)); // somethingCatsomething Cat
 	printf("Real: %s\n", strstr(s7, s2));
 	printf("Mine: %s\n", ft_strstr(s7, s2)); // something Ca, Cat
+
 
 	printf("\nTESTING FT_STRNSTR...\n");
 	printf("Real: %s\n", strnstr(s1, s2, 0));
@@ -140,7 +178,6 @@ int		main()
 		printf("Test: NULL Caterpillar 5 -> TRUE\n");
 	else 
 		printf("Test: NULL Caterpillar 5 -> FALSE\n");
-
 	if (strncmp(s1, s3, 0) == ft_strncmp(s1, s3, 0))
 		printf("Test: Caterpillar, Zoo Animals 0 -> TRUE\n");
 	else 
@@ -153,6 +190,10 @@ int		main()
 		printf("Test: Caterpillar, Zoo Animals 3 -> TRUE\n");
 	else 
 		printf("Test: Caterpillar, Zoo Animals 3 -> FALSE\n");
+
+
+	printf("\nTESTING FT_STRCLR...\n");
+	
 
 	int i = 1;
 	char **result;

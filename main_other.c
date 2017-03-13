@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 22:39:08 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/08 22:43:17 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 16:40:07 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,64 @@ int		main()
 	else 
 		printf("Test: giraffe 8 -> FALSE\n");
 
+	int i = 47;
+	printf("\nTESTING FT_ISALNUM...\n");
+	while (i <= 91)
+	{
+		if (isalnum(i) != ft_isalnum(i))
+			printf("Error for %c\n", (char)i);
+		i++;
+	}
+	printf("Completed.\n");
+	if (isalnum(0) == ft_isalnum(0))
+		printf("Test: NULL -> TRUE\n");
+	else 
+		printf("Test: NULL -> FALSE\n");
 
-
+	i = 47;
 	printf("\nTESTING FT_ISALPHA...\n");
-	if (isalpha(65) == ft_isalpha(65))
-		printf("Test: A -> TRUE\n");
-	else 
-		printf("Test: A -> FALSE\n");
-	if (isalpha(97) == ft_isalpha(97))
-		printf("Test: a -> TRUE\n");
-	else 
-		printf("Test: a -> FALSE\n");
-	if (isalpha(50) == ft_isalpha(50))
-		printf("Test: 2 -> TRUE\n");
-	else 
-		printf("Test: 2 -> FALSE\n");
+	while (i <= 91)
+	{
+		if (isalpha(i) != ft_isalpha(i))
+			printf("Error for %c\n", (char)i);
+		i++;
+	}
+	printf("Completed.\n");
 	if (isalpha(0) == ft_isalpha(0))
 		printf("Test: NULL -> TRUE\n");
 	else 
 		printf("Test: NULL -> FALSE\n");
+
+
+	i = 0;
+	printf("\nTESTING FT_ISASCII...\n");
+	while (i <= 150)
+	{
+		if (isascii(i) != ft_isascii(i))
+			printf("Error for %c\n", (char)i);
+		i++;
+	}
+	printf("Completed.\n");
+
+	i = 0;
+	printf("\nTESTING FT_ISPRINT...\n");
+	while (i <= 127)
+	{
+		if (isprint(i) != ft_isprint(i))
+			printf("Error for %c\n", (char)i);
+		i++;
+	}
+	printf("Completed.\n");
+
+	i = 0;
+	printf("\nTESTING FT_ISDIGIT...\n");
+	while (i <= 127)
+	{
+		if (isdigit(i) != ft_isdigit(i))
+			printf("Error for %c\n", (char)i);
+		i++;
+	}
+	printf("Completed.\n");
 
 	printf("\nTESTING FT_ITOA...\n");
 	printf("Testing 42 : %s\n", ft_itoa(42));
@@ -111,6 +150,33 @@ int		main()
 	printf("Testing -2147483648 : %s\n", ft_itoa(-2147483648));
 	printf("Testing 2147483647 : %s\n", ft_itoa(2147483647));
 	printf("Testing 0 : %s\n", ft_itoa(0));
+
+	char *p1 = "giraffe";
+	char *p2 = "giraffe";
+	char *p3 = "";
+
+	printf("\nTESTING FT_TOUPPER...\n");
+	if (memcmp(toupper(p1), ft_toupper(p2), 8) == 0)
+		printf("Test: giraffe -> TRUE");
+	else
+		printf("Test: giraffe -> FALSE");
+	if (memcmp(toupper(p3), ft_toupper(p3), 1) == 0)
+		printf("Test: NULL -> TRUE");
+	else
+		printf("Test: NULL -> FALSE");
+
+	char *p4 = "GIRAFFE";
+	char *p5 = "GIRAFFE";
+
+	printf("\nTESTING FT_TOLOWER...\n");
+	if (memcmp(tolower(p4), ft_tolower(p5), 8) == 0)
+		printf("Test: GIRAFFE -> TRUE");
+	else
+		printf("Test: GIRAFFE -> FALSE");
+	if (memcmp(tolower(p3), ft_tolower(p3), 1) == 0)
+		printf("Test: NULL -> TRUE");
+	else
+		printf("Test: NULL -> FALSE");
 
 
 	return (0);

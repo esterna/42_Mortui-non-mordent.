@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:04:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/06 14:43:40 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 20:13:01 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+
+int					ft_atoi_base(const char *n, int b);
 
 void				ft_bzero(void *src, size_t n);
 
@@ -122,6 +124,8 @@ char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
 
+char				*ft_itoa_base(int n, int base)
+
 void				ft_putendl(char const *s);
 
 void				ft_putchar_fd(char c, int fd);
@@ -141,6 +145,8 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 int					ft_lstsize(t_list *begin_list);
 
 void				ft_lstadd(t_list **alst, t_list *new);
+
+t_list				*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
 
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 

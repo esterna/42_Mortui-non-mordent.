@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 22:36:20 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/08 22:38:53 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 16:53:05 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,24 +97,31 @@ int		main()
 	printf("Mine: %s\n", ft_memmove(m6, m7, 5));
 
 
-	char *m4 = 0;
-	char *m5 = "Cats and Dogs.";
-	char *m6 = "Cats and Kittens.";
+	char *p1 = 0;
+	char *p2 = "Cats and Dogs.";
+	char *p3 = "Cats and Kittens.";
 
 	printf("\nTESTING FT_MEMCMP...\n");
-	printf("Real: %d\n", memcmp(m5, m6, 0));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 0));
-	printf("Real: %d\n", memcmp(m4, m6, 0)); 
-	printf("Mine: %d\n", ft_memcmp(m4, m6, 0)); 
-	//	printf("Real: %d\n", memcmp(m4, m6, 4)); //Segfaults
-	//	printf("Mine: %d\n", ft_memcmp(m4, m6, 4)); //Segfaults
-	printf("Real: %d\n", memcmp(m5, m6, 4));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 4));
-	printf("Real: %d\n", memcmp(m5, m6, 12));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 12));
-	printf("Real: %d\n", memcmp(m5, m6, 18));
-	printf("Mine: %d\n", ft_memcmp(m5, m6, 18));
+	printf("Real: %d\n", memcmp(p2, p3, 0));
+	printf("Mine: %d\n", ft_memcmp(p2, p3, 0));
+	printf("Real: %d\n", memcmp(p1, p3, 0)); 
+	printf("Mine: %d\n", ft_memcmp(p1, p3, 0)); 
+	//	printf("Real: %d\n", memcmp(p1, p3, 4)); //Segfaults
+	//	printf("Mine: %d\n", ft_memcmp(p1, p3, 4)); //Segfaults
+	printf("Real: %d\n", memcmp(p2, p3, 4));
+	printf("Mine: %d\n", ft_memcmp(p2, p3, 4));
+	printf("Real: %d\n", memcmp(p2, p3, 12));
+	printf("Mine: %d\n", ft_memcmp(p2, p3, 12));
+	printf("Real: %d\n", memcmp(p2, p3, 18));
+	printf("Mine: %d\n", ft_memcmp(p2, p3, 18));
 
+	printf("\nTESTING FT_MEMCHR...\n");
+	printf("Real: %s\n", memchr(p2, 67, 5));
+	printf("Mine: %s\n", ft_memchr(p2, 67, 5));
+	printf("Real: %s\n", memchr(p2, 66, 5));
+	printf("Mine: %s\n", ft_memchr(p2, 66, 5));
+	printf("Real: %s\n", memchr(p1, 67, 5));
+	printf("Mine: %s\n", ft_memchr(p1, 67, 5));
 
 	return (0);
 }
