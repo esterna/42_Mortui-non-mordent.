@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:04:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 20:13:01 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/12 20:16:51 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,8 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 int					ft_lstsize(t_list *begin_list);
 
 void				ft_lstadd(t_list **alst, t_list *new);
+
+void				ft_lstaddend(t_list **alst, t_list *new)
 
 t_list				*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
 
