@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 19:16:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 20:24:27 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/14 13:18:42 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,24 @@ char				*ft_itoa_base(int n, int base)
 	int		neg;
 	int		len;
 	char	*nbr;
+	char	*bstr;
 
-	neg = 0;
+	neg = 1;
+	bstr = "0123456789ABCDEF";
 	if (base < 2)
 		return (NULL);
 	len = nbr_size(n, base) - 2;
 	nbr = str_setup(n, base);
-	if (n < 0)
-	{
-		neg = 1;
-		n = n * -1;
-	}
 	if (!nbr)
 		return (NULL);
+	if (n < 0)
+		neg = -1;
 	while (len)
 	{
-		nbr[len--] = n % base + '0';
+		nbr[len--] = bstr[neg * (n % base)];
 		n = n / base;
 	}
 	if (nbr[len] != '-')
-		nbr[len] = n % base + '0';
+		nbr[len] = bstr[neg * (n % base)];
 	return (nbr);
 }

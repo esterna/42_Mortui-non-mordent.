@@ -6,13 +6,13 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 01:37:20 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/03 18:01:38 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/21 17:00:55 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	char *cpydst;
 

@@ -6,14 +6,14 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 09:51:27 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/03 17:36:12 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/21 17:03:03 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-size_t		ft_strlcat(char *dest, char *src, size_t size)
+size_t		ft_strlcat(char *dest, const char *src, size_t size)
 {
 	int				i;
 	int				n;
