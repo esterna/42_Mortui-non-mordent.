@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:35:29 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/21 16:58:17 by esterna          ###   ########.fr       */
+/*   Updated: 2017/03/22 20:23:24 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 
 	tmp_d = (unsigned char *)dest;
 	tmp_s = (unsigned char *)src;
-	while (*tmp_s != (unsigned char)c && n)
+	while (n && *tmp_s != (unsigned char)c)
 	{
 		*tmp_d++ = *tmp_s++;
 		n--;
 	}
-	if (*tmp_s == (unsigned char)c)
+	if (n && *tmp_s == (unsigned char)c)
 	{
 		*tmp_d++ = *tmp_s++;
 		return (tmp_d);
 	}
-	return (tmp_d = 0);
+	return (NULL);
 }
