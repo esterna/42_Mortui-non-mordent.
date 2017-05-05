@@ -6,27 +6,28 @@
 #    By: esterna <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/26 17:01:46 by esterna           #+#    #+#              #
-#    Updated: 2017/03/12 20:26:19 by esterna          ###   ########.fr        #
+#    Updated: 2017/03/22 20:32:25 by esterna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft
-CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 DEPS = libft.h
-FUNCTIONS = *.c
+FUNCTIONS = $(wildcard *.c)
 OBJ = $(FUNCTIONS:.c=.o)
 
 all: $(NAME)
+
 $(NAME):
 	gcc $(CFLAGS) -c $(FUNCTIONS) $(DEPS)
 	ar rc $@.a $(OBJ)
 	ranlib $@.a
-main: $(NAME)
-	gcc $(CFLAGS) -o $@ main.c -L. -lft
+
 clean:
 	/bin/rm -f $(OBJ)
+
 fclean: clean
 	/bin/rm -f $(NAME).a
-	/bin/rm -f main
 	/bin/rm -f $(NAME).h.gch
-re: fclean all main
+
+re: fclean all
