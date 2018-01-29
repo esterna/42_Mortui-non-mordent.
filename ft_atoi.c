@@ -6,17 +6,17 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 14:30:06 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/08 21:35:12 by esterna          ###   ########.fr       */
+/*   Updated: 2017/08/31 17:10:09 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+size_t		ft_atoi(const char *str)
 {
 	int				i;
-	long long int	result;
-	long long int	neg;
+	long long		result;
+	long long		neg;
 
 	i = 0;
 	neg = 1;

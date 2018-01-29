@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:04:48 by esterna           #+#    #+#             */
-/*   Updated: 2017/05/04 19:39:51 by esterna          ###   ########.fr       */
+/*   Updated: 2017/11/10 17:56:44 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <math.h>
 
-
-/* Chained Lists */
+/*
+**Chained Lists
+*/
 typedef struct		s_list
 {
 	void			*content;
@@ -28,6 +30,8 @@ typedef struct		s_list
 }					t_list;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
+
+t_list				*ft_lstcpy(t_list *old);
 
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 
@@ -46,13 +50,24 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+/*
+** Conversion Functions
+*/
+double				ft_atod(char *nbr);
 
-/* Conversion Functions */
-int					ft_atoi(const char *str);
+size_t				ft_atoi(const char *str);
 
-int					ft_atoi_base(const char *n, int b);
+size_t				ft_atoi_base(const char *n, int b);
+
+char				*ft_dtoa_base(double dbl, int base, int precision);
+
+int					ft_nbrsize_base(int n, int base);
 
 int					ft_tolower(int c);
+
+char				*ft_str_tolower(char *str);
+
+char				*ft_str_toupper(char *str);
 
 int					ft_toupper(int c);
 
@@ -60,8 +75,13 @@ char				*ft_itoa(int n);
 
 char				*ft_itoa_base(int n, int base);
 
+char				*ft_dtosf_base(double dbl, int base, int precision);
 
-/* Identity Functions */
+char				*ft_ulltoa_base(unsigned long long n, char sign, int base);
+
+/*
+** Identity Functions
+*/
 int					ft_isalnum(int n);
 
 int					ft_isalpha(int n);
@@ -72,9 +92,18 @@ int					ft_isdigit(int n);
 
 int					ft_isprint(int c);
 
+int					ft_isspace(int c);
 
-/* Memory Manipulation */
+/*
+**  Memory Manipulation
+*/
+int					**ft_2dintnew(int rows, int cols);
+
+char				**ft_2dstrnew(int lines, int chars);
+
 void				ft_bzero(void *src, size_t n);
+
+int					*ft_intnew(int size);
 
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 
@@ -94,12 +123,43 @@ void				*ft_memset(void *src, int c, size_t n);
 
 void				ft_swap(int *a, int *b);
 
+void				ft_free_array(void **array, size_t n);
 
+/*
+** Math Functions
+*/
+int					dbl_frac_size(double dbl, int base, int precision);
 
-/* Printing Functions */
+int					dbl_front_size(double dbl, int base);
+
+int					find_exponent(double dbl, int base);
+
+int					ft_abs(int n);
+
+double				ft_abs_dbl(double n);
+
+double				ft_fmod(double nb, double div);
+
+int					ft_gcd(int a, int b);
+
+double				ft_modf(double x, double *integer);
+
+double				ft_pow(double base, double exp);
+
+int					ft_roundi(int a, int b);
+
+double				ft_sqrt(double n);
+
+double				ft_round_dbl(double dbl, int precision);
+
+/*
+**  Printing Functions
+*/
 void				ft_putchar(char c);
 
 void				ft_putnbr(int nb);
+
+void				ft_putnstr(char *str, int n);
 
 void				ft_putstr(const char *str);
 
@@ -113,12 +173,27 @@ void				ft_putendl_fd(char const *s, int fd);
 
 void				ft_putnbr_fd(int n, int fd);
 
-void				put_int_array(int **array, int n);
+void				ft_putnstr(char *str, int n);
 
-void				put_str_array(char **array);
+void				ft_put_int_array(int **array, int n);
 
+void				ft_put_str_array(char **array);
 
-/* String Manipulation */
+/*
+** String Manipulation
+*/
+int					ft_count_words(char *str);
+
+void				ft_putwchar(wchar_t ch);
+
+void				ft_putwchar_fd(wchar_t ch, int fd);
+
+void				ft_putwstr(wchar_t const *str);
+
+void				ft_putwstr_fd(wchar_t const *str, int fd);
+
+size_t				ft_wstrlen(const wchar_t *str);
+
 char				*ft_strcat(char *dest, const char *src);
 
 char				*ft_strchr(const char *str, int c);

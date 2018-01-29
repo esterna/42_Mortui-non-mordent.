@@ -6,7 +6,7 @@
 /*   By: esterna <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/02 17:37:45 by esterna           #+#    #+#             */
-/*   Updated: 2017/03/12 22:07:45 by esterna          ###   ########.fr       */
+/*   Updated: 2017/07/10 20:53:31 by esterna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
 	ns = ft_strnew(len);
 	if (!ns)
 		return (NULL);

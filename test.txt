@@ -1,0 +1,2 @@
+I love cats\0
+Somethingsomething
